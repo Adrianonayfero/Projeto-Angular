@@ -1,0 +1,39 @@
+<dir class="container">
+  <h1 *ngIf="!isChange" mat-dialog-title>Adicionar Veículo</h1>
+  <h1 *ngIf="isChange" mat-dialog-title>Editar Veículo</h1>
+  <div mat-dialog-content #container>
+    <mat-form-field appearance="fill">
+      <mat-label>Id</mat-label>
+      <input matInput [(ngModel)]="data.id">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Placa</mat-label>
+      <input matInput [(ngModel)]="data.placa">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Chassi</mat-label>
+      <input matInput [(ngModel)]="data.chassi">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Renavan</mat-label>
+      <input matInput [(ngModel)]="data.renavan">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Modelo</mat-label>
+      <input matInput [(ngModel)]="data.modelo">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Marca</mat-label>
+      <input matInput [(ngModel)]="data.marca">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Ano</mat-label>
+      <input matInput [(ngModel)]="data.ano">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-button *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial>Adicionar</button>
+    <button mat-button *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial>Editar</button>
+  </div>
+</dir>
